@@ -13,7 +13,7 @@ cur = conn.cursor()
 #method to retrieve list of dictionary containing api data.
 def get_jsonparsed_annual_data(ticker,years):
     numYears= years
-    url ="https://financialmodelingprep.com/api/v3/balance-sheet-statement/"+ str(ticker.upper()) + "?limit="+ str(numYears) + "&apikey=f59b1e1e664a436b64c56f1acbca1725"
+    url ="my api key"
     response = urlopen(url)
     data = response.read().decode("utf-8")
     print('data retrieved from  ')
