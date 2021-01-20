@@ -13,7 +13,7 @@ cur = conn.cursor()
 #method to retrieve list of dictionary containing api data.
 def get_jsonparsed_annual_data(ticker,years):
     numYears= years
-    url ="my api key"
+    url ="my_API_key"
     response = urlopen(url)
     data = response.read().decode("utf-8")
     print('data retrieved from  ')
@@ -78,7 +78,7 @@ def CreateInsert(data,ticker,years):
         row.append(str(ticker.upper()))
         row.append(key)      
         while k < years+1:     
-            row.append(data1[years-(k+1)][key])             
+            row.append(data1[years-(k)][key])             
             k=k+1
         
         rowlist.append(row)
@@ -95,5 +95,6 @@ def makeTable(ticker,years):
     
     conn.commit()
 #--------------------------------------------------------------------------------
+#api call limited to 5 years data
+makeTable('AAPL',5)
 
-makeTable('MSFT',5)
